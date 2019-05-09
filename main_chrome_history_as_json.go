@@ -20,20 +20,24 @@ import (
 func handlerHistory(url, name string) {
 
 	res, _ := http.Get(url)
-	baseDirectory := "html_files_dump/_"
-	url = strings.Replace(url, "https://", "", -1)
-	url = strings.Replace(url, "http://", "", -1)
+	name = strings.Replace(name, ".", "_", -1)
+	baseDirectory := name + "/_"
+	url = strings.Replace(url, "https://", "_", -1)
+	url = strings.Replace(url, "http://", "_", -1)
+	url = strings.Replace(url, "/", "_", -1)
 	resInByteArr, _ := ioutil.ReadAll(res.Body)
-	resInString := string(resInByteArr)
-	fmt.Print(resInString)
 
 	// creating local storage html files
-	filePtr, _ := os.Create(baseDirectory + url + "_.html")
+	filePtr, e1 := os.Create(baseDirectory + url + "_.html")
+	if e1 != nil {
+		fmt.Println(baseDirectory + url + "_.html")
+		panic(e1)
+	}
 	_, e := filePtr.Write(resInByteArr)
 	if e != nil {
 		panic(e)
 	}
-	filePtr.Close()
+	_ = filePtr.Close()
 
 }
 
@@ -51,7 +55,8 @@ type chromeHistory struct {
 
 func makeDir(name string) bool {
 
-	_, err := exec.Command("mkdir", name).Output()
+	name = strings.Replace(name, ".", "_", -1)
+	_, err := exec.Command("mkdir", "-p",name).Output()
 	if err != nil {
 		panic(err)
 	}
