@@ -11,7 +11,7 @@ import (
 func handler(url string) {
 
 	res, _ := http.Get(url)
-	baseDirectory := "html_files_dump/_"
+	baseDirectory := "_"
 	url = strings.Replace(url, "https://", "", -1)
 	url = strings.Replace(url, "http://", "", -1)
 	resInByteArr, _ := ioutil.ReadAll(res.Body)
@@ -20,7 +20,7 @@ func handler(url string) {
 
 	// creating local storage html files
 	filePtr, _ := os.Create(baseDirectory + url + "_.html")
-	see, e := filePtr.Write(resInByteArr)
+	_, e := filePtr.Write(resInByteArr)
 	if e != nil {
 		panic(e)
 	}
