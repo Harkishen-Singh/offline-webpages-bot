@@ -17,7 +17,7 @@ import (
 	"os/exec"
 )
 
-func handlerHistory(url, name string) {
+func handlerHistory(url, name string) (bool, error) {
 
 	res, _ := http.Get(url)
 	name = strings.Replace(name, ".", "_", -1)
@@ -25,8 +25,11 @@ func handlerHistory(url, name string) {
 	url = strings.Replace(url, "https://", "_", -1)
 	url = strings.Replace(url, "http://", "_", -1)
 	url = strings.Replace(url, "/", "_", -1)
-	resInByteArr, _ := ioutil.ReadAll(res.Body)
-
+	resInByteArr, err1 := ioutil.ReadAll(res.Body)
+	if err1 != nil {
+		return false, err1
+	}
+	defer res.Body.Close()
 	// creating local storage html files
 	filePtr, e1 := os.Create(baseDirectory + url + "_.html")
 	if e1 != nil {
@@ -38,6 +41,7 @@ func handlerHistory(url, name string) {
 		panic(e)
 	}
 	_ = filePtr.Close()
+	return true, nil
 
 }
 
@@ -78,7 +82,6 @@ func importChromeHistoryJSON(name string) (bool, []chromeHistory) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(chromeHistoryArray)
 	fmt.Println("done!")
 	return true, chromeHistoryArray
 

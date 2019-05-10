@@ -4,27 +4,39 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"strings"
 	"os"
+	"os/exec"
+	"strings"
 )
 
-func handler(url string) {
+func handler(url, name string) {
 
 	res, _ := http.Get(url)
-	baseDirectory := "_"
+	baseDirectory := name + "/"
 	url = strings.Replace(url, "https://", "", -1)
 	url = strings.Replace(url, "http://", "", -1)
+	url = strings.Replace(url, "/", "_", -1)
+	url = strings.Replace(url, ".", "_", -1)
 	resInByteArr, _ := ioutil.ReadAll(res.Body)
-	resInString := string(resInByteArr)
-	fmt.Print(resInString)
 
 	// creating local storage html files
-	filePtr, _ := os.Create(baseDirectory + url + "_.html")
+	filePtr, err := os.Create(baseDirectory + url + "_.html")
+	if err != nil {
+		panic(err)
+	}
+	defer filePtr.Close()
 	_, e := filePtr.Write(resInByteArr)
 	if e != nil {
 		panic(e)
 	}
-	filePtr.Close()
+
+}
+
+func makeDir2(name string) bool {
+
+	name = strings.Replace(name, ".", "_", -1)
+	_, _ = exec.Command("mkdir", name).Output()
+	return true
 
 }
 
@@ -32,8 +44,10 @@ func main() {
 
 	arg := os.Args[1:]
 	fmt.Println(arg)
+	dirName := "html_files_dump"
+	makeDir2(dirName)
 	for _, ar := range arg {
-		handler(ar)
+		handler(ar, dirName)
 	}
 
 }
