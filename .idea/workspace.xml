@@ -12,21 +12,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_args.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="127">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="e#14#73#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -60,10 +55,11 @@
         <option value="$PROJECT_DIR$/main_chrome_history_as_json.go" />
         <option value="$PROJECT_DIR$/history.json" />
         <option value="$PROJECT_DIR$/main_args.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -82,6 +78,11 @@
             <path>
               <item name="offline-webpages-bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="offline-webpages-bot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="offline-webpages-bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="offline-webpages-bot" type="462c0819:PsiDirectoryNode" />
+              <item name="html_files_dump" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -136,10 +137,10 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="736" extended-state="6" />
+    <frame x="0" y="-1" width="1366" height="736" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20075758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20075758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -201,23 +202,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html_files_dump/stackoverflow_com_questions_21497781_how-to-change-chrome-packaged-app-id-or-why-do-we-need-key-field-in-the-manifest_21500707#21500707_.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-945" />
+        <state relative-caret-position="15">
+          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_files_dump/stackoverflow_com_questions_21497781_how-to-change-chrome-packaged-app-id-or-why-do-we-need-key-field-in-the-manifest_21500707#21500707_.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_files_dump/xebia_com_blog_speech-recognition-and-synthesis-in-the-browser__.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/main_args.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="127">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="e#14#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
